@@ -13,6 +13,10 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         //
-        'http://127.0.0.1:8000/webhook/*'
+        'http://127.0.0.1:8000/webhook/*',
+        'http://127.0.0.1:8000/fetch_contact_grmax/',
+        'http://127.0.0.1:8000/fetch_contact_grmax_reverse/',
+        'http://127.0.0.1:8000/fetch_gr_max_pro/'
+
     ];
 }

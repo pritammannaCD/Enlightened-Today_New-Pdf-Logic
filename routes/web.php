@@ -4,7 +4,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Request;
 
 use App\Http\Middleware\Webhook;
+use App\Http\Middleware\FetchContactGrmax;
+
 use App\Http\Controllers\WebhookController;
+use App\Http\Controllers\FetchContactGrmaxController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +31,7 @@ Route::get('/', function () {
 
 
 Route::any('/webhook/{id}', [WebhookController::class, 'save_to_table'])->middleware(Webhook::class);
+
+Route::any('/fetch_contact_grmax', [FetchContactGrmaxController::class, 'index'])->middleware(FetchContactGrmax::class);
+Route::any('/fetch_contact_grmax_reverse', [FetchContactGrmaxController::class, 'reverse'])->middleware(FetchContactGrmax::class);
+Route::any('/fetch_gr_max_pro', [FetchContactGrmaxController::class, 'pro'])->middleware(FetchContactGrmax::class);
